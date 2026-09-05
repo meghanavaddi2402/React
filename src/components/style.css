@@ -1,0 +1,109 @@
+header{
+    background-color: rgb(73, 163, 193);
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    padding: 10px;
+    margin: 10px;
+    background-color:  rgb(73, 163, 193);
+}
+.s1 {
+    background: white;
+    padding: 5%;
+    display: flex;
+    color: black;
+    height: 400px;
+}
+
+.s1>div {
+    flex-basis: 50%;
+}
+
+.s1 img {
+    width: 80%;
+    height: 100%;
+}
+.s1 h1{
+    color: black;
+}
+.doctorcontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 5%;
+    background-color: white;
+    height: 500px;
+}
+img {
+    width: 90%;
+    height: 50%;
+    padding: 2%;
+    border: 2px solid black;
+
+}
+.doctorcontainer h1{
+    color: black;
+}
+.doctorcontainer p{
+    color: black;
+}
+ .addnewdoctor {
+    background-color: white;
+    color: black;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.addnewdoctor h1 {
+    color: black;
+    margin-bottom: 25px;
+}
+
+.addnewdoctor form {
+    width: 500px;
+    margin: auto;
+    border: 2px;
+    padding: 3%;
+    height: 500px;
+    background-color: rgb(73, 163, 193);
+    border-radius: 10px;
+}
+
+.addnewdoctor form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addnewdoctor input,
+.addnewdoctor select {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid ;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+}
+
+.addnewdoctor input:focus,
+.addnewdoctor select:focus {
+    outline: none;
+    border: 2px solid rgb(73, 163, 193);
+}
+
+.addnewdoctor button {
+    width: 150px;
+    padding: 12px;
+    margin: 15px auto 0;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}

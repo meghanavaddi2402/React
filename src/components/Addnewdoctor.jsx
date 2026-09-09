@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Home from "./Home"
+import axios from "axios"
 
 function Addnewdoctor() {
     let [name,setaName]= useState('')
@@ -8,11 +9,30 @@ function Addnewdoctor() {
     let [specialization,setSpecialization]= useState('')
     let [salary,setSalary]= useState('')
     let[newdoctor,setNewdoctor]=useState(null)
-    function handelsubmit(event){
+
+    async function handelsubmit(event){
         event.preventDefault()
         let fromdetails={id:Date.now(),name,age,gender,specialization,salary}
-       setNewdoctor(fromdetails)
+        await axios.post('https://doctorapibackend.onrender.com/doctors',fromdetails)
+        alert('data posted')
+        setNewdoctor(fromdetails)
 
+    }
+    async function deletedata(id){
+        await axios.delete(`https://doctorapibackend.onrender.com/doctors/${id}`)
+        alert('data deleted')
+        setNewdoctor(id)
+    }
+    async function updatedata(id) {
+        let update={
+            name: 'john',
+            specialization: 'heart',
+            age: 25,
+            gender: 'male',
+            salary: 600000
+        }
+        await axios.put(`https://doctorapibackend.onrender.com/doctors/${id}`,update)
+        alert('data updated')
     }
   return (
     <div className='addnewdoctor'>
@@ -31,9 +51,9 @@ function Addnewdoctor() {
                 <input type="text" value={salary} onChange={(e)=>setSalary(e.target.value)} placeholder='Enter Salary' /> <br />
                 <button >AddDoctor</button>
                 </div>
-            </form>
+            </form> <br /> <br />
         </center>
-        <Home newdoctor={newdoctor}/>
+        <Home deletedata={deletedata} updatedata={updatedata} newdoctor={newdoctor}/>
     </div>
   )
 }
